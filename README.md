@@ -60,7 +60,7 @@
 <p align="center"><img src="https://github.com/RenataVerasVenturim/Data_base_server/assets/129551549/ec491d83-ab81-49d3-8009-2e1ab738f93c">
 </p>
 <p>Input do usuário via form do html recebido pelo servidor público (Railway), autenticação no Google Cloud e resposta json renderizada em um html com dados de toda a linha da planilha. Backend em Node.js e Frontend em html e css e javascripts</p>
-<p><img src="https://media2.giphy.com/media/pyHhg54LZ0WC9JQLoo/giphy.gif" alt="Projeto da Renata"></p>
+<p><img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExejByY21hNzhjc3gwenAyY2VoNGwxdnp6YTkzMXg1djR2azFveTgwMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/aG4ZEPoWqIqK5dyLIn/giphy.gif" alt="Projeto da Renata"></p>
 
 <h2>Resposta ao usuário - HTML</h2>
 <img src="https://github.com/RenataVerasVenturim/Google_Sheets_as_Database/assets/129551549/75b8e02b-845f-4b85-9889-4e2f1b32dbee">
