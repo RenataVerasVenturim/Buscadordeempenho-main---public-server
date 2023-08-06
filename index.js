@@ -1,47 +1,27 @@
-/*Inserir no terminal npx nodemon index.js */
-/*Objetivo: Criar um servidor local para teste */
-/*Declaração das variáveis */
-/*Entrada de dados */
-
 const { google } = require('googleapis');
 const fs = require('fs');
 const express = require('express');
 const server = express();
-const port = 5500;
+const port = process.env.PORT || 3000; // Use a porta definida pelo ambiente ou 3000 como padrão
 
 // Configurar a pasta "public" para servir arquivos estáticos
 server.use(express.static('public'));
 
-/*Saída de dados*/
-
-// Ouvir conexões da porta especificada
-server.listen(port, () => {
-  console.log(`Servidor rodando em http://localhost:${port}`);
-});
-
-/*Objetivo: autenticação no Google Cloud */
-/*Entrada de dados */
-
-// Configuração do ID da planilha
-const SPREADSHEET_ID = 'SPREADSHEET_ID_VARIABLE';
-// Credenciais do Google Sheets
-const credentials = {
-  client_email: 'client_email_variable',
-  private_key: 'private_key_variable',
-};
-
-// Autenticação usando OAuth 2.0
+/* Objeto de autenticação no Google Cloud */
 async function authenticateGoogleSheets() {
   try {
     const auth = new google.auth.GoogleAuth({
-      credentials,
+      credentials: {
+        client_email: process.env.CLIENT_EMAIL,
+        private_key: process.env.PRIVATE_KEY.replace(/\\n/g, '\n'), // Ajustar a formatação da chave
+      },
       scopes: ['https://www.googleapis.com/auth/spreadsheets'],
     });
     const sheets = google.sheets({ version: 'v4', auth });
 
     const response = await sheets.spreadsheets.values.get({
-      spreadsheetId: SPREADSHEET_ID,
-      range: 'Planilha de Controle', // nome da aba da planilha
+      spreadsheetId: process.env.SPREADSHEET_ID,
+      range: 'Planilha de Controle', // Nome da aba da planilha
     });
 
     console.log('Autenticação com o Google Sheets bem-sucedida.');
@@ -52,19 +32,23 @@ async function authenticateGoogleSheets() {
   }
 }
 
-
 // Rota para buscar informações do empenho
-
 server.get('/empenhos', async (req, res) => {
   try {
     const numeroEmpenho = req.query.numeroEmpenho;
-    const numeroEmpenhoCleaned = numeroEmpenho.trim().toUpperCase(); // Remover espaços e transformar em maiúsculas
-    console.log('Número do empenho recebido:', numeroEmpenhoCleaned);
+    const numeroEmpenhoCleaned = numeroEmpenho.trim().toUpperCase();
 
     const sheetData = await authenticateGoogleSheets();
     console.log('Dados da planilha carregados.');
 
     const rows = sheetData.values;
+
+    // Filtrar as informações para encontrar o empenho correspondente
+    const empenhoEncontrado = rows.find((row) => {
+      const valorDaPlanilha = row[1].trim().toUpperCase();
+      return valorDaPlanilha === numeroEmpenhoCleaned;
+    });
+
 
     // Filtrar as informações para encontrar o empenho correspondente
     const empenhoEncontrado = rows.find((row) => {
@@ -101,3 +85,13 @@ server.get('/empenhos', async (req, res) => {
     res.status(500).send('Erro ao buscar informações do empenho. Por favor, tente novamente mais tarde.');
   }
 });
+
+// Inicie o servidor
+server.listen(port, () => {
+  console.log(`Servidor rodando na porta ${port}`);
+});
+
+
+
+
+
