@@ -1,0 +1,23 @@
+{
+  "name": "buscadordeempenho-main",
+  "version": "1.0.0",
+  "description": "Formulário de busca de situação de empenho",
+  "main": "buscador.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/RenataVerasVenturim/Buscadordeempenho"
+  },
+  "author": "Renata Veras Venturim",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security",
+    "googleapis": "^123.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
