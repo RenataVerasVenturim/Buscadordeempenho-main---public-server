@@ -27,6 +27,8 @@
 </ul>
 
 <h2>Funcionamento</h2>
+<p align="center"><img src="https://github.com/RenataVerasVenturim/Data_base_server/assets/129551549/ec491d83-ab81-49d3-8009-2e1ab738f93c">
+</p>
 <p>Input do usuário via form do html recebido pelo servidor local (express do node.js), autenticação no Google Cloud e resposta json renderizada em um html com dados de toda a linha da planilha. Backend em Node.js e Frontend em html e css e javascripts</p>
 <p><img src="https://media2.giphy.com/media/pyHhg54LZ0WC9JQLoo/giphy.gif" alt="Projeto da Renata"></p>
 
