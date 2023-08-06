@@ -2,7 +2,7 @@ const { google } = require('googleapis');
 const fs = require('fs');
 const express = require('express');
 const server = express();
-const port = process.env.PORT || 3001; // Use a porta definida pelo ambiente ou 3000 como padrão
+const port = process.env.PORT || 3000; // Use a porta definida pelo ambiente ou 3000 como padrão
 
 // Configurar a pasta "public" para servir arquivos estáticos
 server.use(express.static('public'));
