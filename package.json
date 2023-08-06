@@ -1,5 +1,5 @@
 {
-  "name": "buscadordeempenho-main",
+  "name": "Google_sheets_as_a_Data_base_public_server",
   "version": "1.0.0",
   "description": "Formulário de busca de situação de empenho",
   "main": "buscador.js",
