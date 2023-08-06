@@ -10,13 +10,18 @@ server.use(express.static('public'));
 /* Objeto de autenticação no Google Cloud */
 async function authenticateGoogleSheets() {
   try {
+    /*temporário---------------------------------------------------------------------------------- */
+    console.log('CLIENT_EMAIL:', process.env.CLIENT_EMAIL);
+    console.log('PRIVATE_KEY:', process.env.PRIVATE_KEY); // Verifique se a chave privada está correta aqui
+/*-------------------------------------------------------------------------------------------------*/
     const auth = new google.auth.GoogleAuth({
       credentials: {
         client_email: process.env.CLIENT_EMAIL,
-        private_key: process.env.PRIVATE_KEY
+        private_key: process.env.PRIVATE_KEY.replace(/\\n/g, '\n'), // Ajustar a formatação da chave
       },
       scopes: ['https://www.googleapis.com/auth/spreadsheets'],
     });
+
     const sheets = google.sheets({ version: 'v4', auth });
 
     const response = await sheets.spreadsheets.values.get({
