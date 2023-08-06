@@ -43,12 +43,6 @@ server.get('/empenhos', async (req, res) => {
 
     const rows = sheetData.values;
 
-    // Filtrar as informações para encontrar o empenho correspondente
-    const empenhoEncontrado = rows.find((row) => {
-      const valorDaPlanilha = row[1].trim().toUpperCase();
-      return valorDaPlanilha === numeroEmpenhoCleaned;
-    });
-
 
     // Filtrar as informações para encontrar o empenho correspondente
     const empenhoEncontrado = rows.find((row) => {
