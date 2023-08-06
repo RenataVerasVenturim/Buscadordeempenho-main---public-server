@@ -5,7 +5,9 @@ const server = express();
 const port = process.env.PORT || 3000; // Use a porta definida pelo ambiente ou 3000 como padrão
 
 // Configurar a pasta "public" para servir arquivos estáticos
-server.use(express.static('public'));
+server.use(express.static('public', {
+  maxAge: 3600 * 1000, // Cache por 1 hora (3600 segundos * 1000 milissegundos)
+}));
 
 /* Objeto de autenticação no Google Cloud */
 async function authenticateGoogleSheets() {
