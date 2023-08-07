@@ -1,88 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta name="description" content="Site do setor PROPPI da Universidade Federal Fluminense - UFF">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="faviconuff.ico" type="image/x-icon">
-    <title>PROPPI</title>
-    
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <nav>
-            
-            <img src="logo.png" alt="logo uff" width="150" height="147">
-
-
-            <button id="btn-menu" aria-label="Menu">
-            <svg width="24" height="24" viewBox="0 0 32 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1.96317 2.13703H30.6939C31.4122 2.13703 31.9999 1.7868 31.9999 1.06853C31.9999 0.350261 31.4122 3.05176e-05 30.6939 3.05176e-05H1.96317C1.2449 3.05176e-05 0.657227 0.350261 0.657227 1.06853C0.657227 1.7868 1.2449 2.13703 1.96317 2.13703ZM30.6939 21.37H1.96317C1.2449 21.37 0.657227 21.4828 0.657227 22.2011C0.657227 22.9193 1.2449 23.507 1.96317 23.507H30.6939C31.4122 23.507 31.9999 23.1568 31.9999 22.4385C31.9999 21.7072 31.4122 21.37 30.6939 21.37ZM30.6939 10.685H1.96317C1.2449 10.685 0.657227 11.0353 0.657227 11.7535C0.657227 12.4718 1.2449 12.822 1.96317 12.822H30.6939C31.4122 12.822 31.9999 12.4718 31.9999 11.7535C31.9999 11.0222 31.4122 10.685 30.6939 10.685Z" fill="#1C1C1C" ></path>
-            </svg>
-            </button>
-
-            <ul id="lista_suspensa">
-                <li><a href="index.html" class="list">EMPENHOS</a>
-                <li><a href="tutorial.html" class="list">TUTORIAL</a>
-                <li><a href="#contact" class="list">CONTATOS</a>
-            </ul>
-      
-        </nav>
-    </header>
-    
-    <main>       
-       
-    <div id="buscador"> 
-       
-        <p id="titulo"><b>CONSULTAR SITUAÇÃO DE EMPENHO </b> 
-        </p>
-        <br>
-        <picture>
-        <source media="(max-width:750px)" srcset="iconep.jpg" type="image/jpg">
-        <source media="(max-width:1050px)" srcset="iconep.jpg" type="image/jpg">                
-        <img src="iconeg.jpg" alt="buscador de empenho">         
-        </picture>
-    <br>
-        <br>
-        <form action="/empenhos/" method="get">
-            <!--<label for="primeirocampo">Nota fiscal:</label>
-            <br>
-            <br>
-                <input type="text" placeholder="Digite o número da nota fiscal" name="primeirocampo" id="primeirocampo">
-            <br>
-            <br>
-            //-->
-            <label for="segundocampo">Número do empenho:</label>
-            <br>
-            <br>
-            <input type="text" placeholder="Digite no formato '2023NE000123'" name="numeroEmpenho" id="segundocampo" required minlength="12" maxlength="12">
-
-            <br>
-            <br>
-            <br>
-                <input type="submit" value="CONSULTAR" class="btn">            
-            
-            <p id="versao"><i>By Renata Veras Venturim</i></p>
-        </form>
-            
-    </div>
-    </main>
-
-    <footer>
-        <p>&copy; 2023 Universidade Federal Fluminense. Todos os direitos reservados.</p>
-        <br><p>PROPPI – Pró-Reitoria de Pesquisa, Pós-Graduação e Inovação<p>
-
-        <p>Endereço:Rua Miguel de Frias, 9, 3º andar, Icaraí, Niterói – RJ. CEP: 24220-900</p>
-            
-        <p id="contact">Contato: compras.proppi@id.uff.br</p>
-        
-    </footer>
-
-    <script type="application/javascript" src="../index.js"></script>
-    <script>
-        const btn_menu = document.getElementById("btn-menu");
+<!DOCTYPE html><html lang="pt-br"><head><meta name="description" content="Site do setor PROPPI da Universidade Federal Fluminense - UFF"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="shortcut icon" href="faviconuff.ico" type="image/x-icon"><title>PROPPI</title><link rel="stylesheet" href="style.css"></head><body><header><nav><img src="logo.png" alt="logo uff" width="150" height="147"><button id="btn-menu" aria-label="Menu"><svg width="24" height="24" viewBox="0 0 32 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.96317 2.13703H30.6939C31.4122 2.13703 31.9999 1.7868 31.9999 1.06853C31.9999 0.350261 31.4122 3.05176e-05 30.6939 3.05176e-05H1.96317C1.2449 3.05176e-05 0.657227 0.350261 0.657227 1.06853C0.657227 1.7868 1.2449 2.13703 1.96317 2.13703ZM30.6939 21.37H1.96317C1.2449 21.37 0.657227 21.4828 0.657227 22.2011C0.657227 22.9193 1.2449 23.507 1.96317 23.507H30.6939C31.4122 23.507 31.9999 23.1568 31.9999 22.4385C31.9999 21.7072 31.4122 21.37 30.6939 21.37ZM30.6939 10.685H1.96317C1.2449 10.685 0.657227 11.0353 0.657227 11.7535C0.657227 12.4718 1.2449 12.822 1.96317 12.822H30.6939C31.4122 12.822 31.9999 12.4718 31.9999 11.7535C31.9999 11.0222 31.4122 10.685 30.6939 10.685Z" fill="#1C1C1C"></path></svg></button><ul id="lista_suspensa"><li><a href="index.html" class="list">EMPENHOS</a><li><a href="tutorial.html" class="list">TUTORIAL</a><li><a href="#contact" class="list">CONTATOS</a></ul></nav></header><main><div id="buscador"><p id="titulo"><b>CONSULTAR SITUAÇÃO DE EMPENHO</b></p><br><picture><source media="(max-width:750px)" srcset="iconep.jpg" type="image/jpg"><source media="(max-width:1050px)" srcset="iconep.jpg" type="image/jpg"><img src="iconeg.jpg" alt="buscador de empenho"></picture><br><br><form action="/empenhos/" method="get"><label for="segundocampo">Número do empenho:</label><br><br><input type="text" placeholder="Digite no formato '2023NE000123'" name="numeroEmpenho" id="segundocampo" required minlength="12" maxlength="12"><br><br><br><input type="submit" value="CONSULTAR" class="btn"><p id="versao"><i>By Renata Veras Venturim</i></p></form></div></main><footer><p>&copy; 2023 Universidade Federal Fluminense. Todos os direitos reservados.</p><br><p>PROPPI – Pró-Reitoria de Pesquisa, Pós-Graduação e Inovação<p><p>Endereço:Rua Miguel de Frias, 9, 3º andar, Icaraí, Niterói – RJ. CEP: 24220-900</p><p id="contact">Contato: compras.proppi@id.uff.br</p></footer><script>const btn_menu = document.getElementById("btn-menu");
         const lista_suspensa = document.getElementById("lista_suspensa");
 
         btn_menu.addEventListener("click", function() {
@@ -91,8 +7,4 @@
     } else {
         lista_suspensa.style.display = "none";
     }
-        });
-    </script>
-    
-</body>
-</html>
+        });</script></body></html>
