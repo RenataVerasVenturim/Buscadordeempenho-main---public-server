@@ -215,3 +215,21 @@ color:black;
     box-shadow: 2px 2px 2px rgb(2, 0, 0);
     background-color: #e5b05a;
 }
+/*estilos template.html*/
+h1{
+    text-align: center;
+}
+
+#resultado{         
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+    background-color: #FFF;
+    margin:auto;
+    margin-top: 5px ;
+    margin-bottom:5px ;
+    width: 80%;
+    padding:3px;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px rgb(148, 142, 142);
+}
